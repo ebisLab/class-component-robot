@@ -1,8 +1,8 @@
 export const data = [
     {id:1,
-    title: 'Nature best'},
+    name: 'Nature best'},
     {id:2,
-    title: 'collage'},
+    name: 'collage'},
     {id:3,
-    title: 'udemy'}
+    name: 'udemy'}
 ]

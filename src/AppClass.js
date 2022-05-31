@@ -6,9 +6,16 @@ export default class AppClass extends Component {
     constructor(){
         super() //calls constructor of component
         this.state={
-            data: data, 
+            data: [], 
             searchfield:''
         }
+    }
+
+    componentDidMount(){
+        // this.setState({data:data})
+fetch('https://jsonplaceholder.typicode.com/users')
+.then(res=>res.json())
+.then(users=> this.setState({data:users}))
     }
 
     onSearchChange = (event)=>{
@@ -16,8 +23,9 @@ export default class AppClass extends Component {
         this.setState({searchfield: event.target.value}) //this.state.searchField
     }
   render() {
+      console.log('data', this.state.data)
     const filteredValues = this.state.data.filter(item=>{
-        return item.title.toLowerCase().includes(this.state.searchfield.toLowerCase())
+        return item.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
     })
     return (
       <div>

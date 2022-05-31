@@ -1,14 +1,12 @@
 import React from 'react'
 import Card from './Card'
 
-export default function CardList({data},filteredValues) {
-    console.log('data', data)
+export default function CardList({data}) {
 
   return (
     <div>
-        {data.map(item=> <Card title={item.title} />)}
+        {data.map(item=> <Card key={item.id} name={item.name} />)}
 
-{/* {this.state.data.map(item=> <Card key={item.id}/>)} */}
     </div>
   )
 }

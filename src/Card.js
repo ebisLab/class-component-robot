@@ -1,9 +1,9 @@
 import React from 'react'
 
- function Card({title}) {
+ function Card({name}) {
   return (
     <div>   
-      {title}
+      {name}
        </div>
   )
 }

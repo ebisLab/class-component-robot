@@ -1,9 +1,6 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 
 export default function SearchBox({onSearchChange}) {
-    const [change, setChange] = useState();
-
-    const handleSubmit=()=>{}
   return (
     <div>
         <form>
