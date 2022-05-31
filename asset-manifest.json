@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/class-component-robot/static/css/main.e6c13ad2.css",
+    "main.js": "/class-component-robot/static/js/main.998bdbeb.js",
+    "static/js/787.f6696550.chunk.js": "/class-component-robot/static/js/787.f6696550.chunk.js",
+    "index.html": "/class-component-robot/index.html",
+    "main.e6c13ad2.css.map": "/class-component-robot/static/css/main.e6c13ad2.css.map",
+    "main.998bdbeb.js.map": "/class-component-robot/static/js/main.998bdbeb.js.map",
+    "787.f6696550.chunk.js.map": "/class-component-robot/static/js/787.f6696550.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.998bdbeb.js"
+  ]
+}
