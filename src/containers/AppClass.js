@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import SearchBox from './SearchBox'
-import {data} from './data'
-import CardList from './CardList'
+import SearchBox from '../components/SearchBox'
+import CardList from '../components/CardList'
 export default class AppClass extends Component {
     constructor(){
         super() //calls constructor of component

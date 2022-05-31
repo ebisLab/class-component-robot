@@ -1,6 +1,6 @@
-import Card from './Card';
+import Card from './components/Card';
 import {data} from './data'
-import SearchBox from './SearchBox';
+import SearchBox from './components/SearchBox';
 
 function App() {
   return (
