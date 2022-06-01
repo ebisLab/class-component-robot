@@ -65,6 +65,12 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/a
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
+### Hooks
+
+This section is translated into hooks: [https://github.com/ebisLab/class-component-robot/tree/hooks](https://github.com/ebisLab/class-component-robot/tree/hooks)
+
+https://github.com/ebisLab/class-component-robot/tree/hooks
+
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
