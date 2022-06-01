@@ -5,6 +5,16 @@ import CardList from '../components/CardList'
 import ErrorBoundary from '../components/ErrorBoundary'
 import {setSearchField} from '../actions'
 
+const mapStateToProps = state => {
+    return {
+        searchField: state.searchField 
+    }
+}
+
+const mapDispatchToProps=(dispatch)=>{ //dispatch is what triggers the action
+  return {
+      onSearchChange: (event)=>dispatch(setSearchField(event.target.value))}
+}
 const AppClass =(props)=> {
     const [data, setData]= useState([]);
     const [searchfield, setSearchField] =useState('')
@@ -38,4 +48,4 @@ const AppClass =(props)=> {
     )
   }
 
-  export default AppClass
+  export default connect(mapStateToProps, mapDispatchToProps)(AppClass)
