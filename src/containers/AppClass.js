@@ -7,7 +7,7 @@ import {setSearchField} from '../actions'
 
 const mapStateToProps=state=>{
     return {
-        // searchField: state.searchField
+        searchField: state.searchField
         //from reducer
         // searchField: state.searchData.searchField
     }
@@ -23,7 +23,7 @@ class AppClass extends Component {
         super() //calls constructor of component
         this.state={
             data: [], 
-            searchfield:''
+            // searchfield:''
         }
     }
 
@@ -33,20 +33,17 @@ fetch('https://jsonplaceholder.typicode.com/users')
 .then(users=> this.setState({data:users}))
     }
 
-    onSearchChange = (event)=>{
-        console.log(event);
-        this.setState({searchfield: event.target.value}) //this.state.searchField
-    }
   render() {
-    const {data, searchfield} = this.state
+    const {data} = this.state
+    const {searchField, onSearchChange} = this.props
     const filteredValues = data.filter(item=>{
-        return item.name.toLowerCase().includes(searchfield.toLowerCase())
+        return item.name.toLowerCase().includes(searchField.toLowerCase())
     })
    return !data.length ? ( 'Loading ...'):
      (
       <div>
           <h1>With App class</h1>
-          <SearchBox onSearchChange={this.onSearchChange} />
+          <SearchBox onSearchChange={onSearchChange} />
           <ErrorBoundary>
           <CardList data={filteredValues}/>
           </ErrorBoundary>
