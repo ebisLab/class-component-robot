@@ -1,17 +1,21 @@
 import React, { useEffect, useState } from 'react'
+import  {connect} from 'react-redux'
 import SearchBox from '../components/SearchBox'
 import CardList from '../components/CardList'
 import ErrorBoundary from '../components/ErrorBoundary'
-const AppClass =()=> {
+import {setSearchField} from '../actions'
+
+const AppClass =(props)=> {
     const [data, setData]= useState([]);
     const [searchfield, setSearchField] =useState('')
     const [count, setCount] = useState(0)
+
 
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/users')
         .then(res=>res.json())
         .then(users=> setData(users))
-    }, [count])
+    }, [count, props])
     
     const onSearchChange = (event)=>{
         setSearchField(event.target.value) //this.state.searchField
