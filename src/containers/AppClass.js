@@ -2,7 +2,23 @@ import React, { Component } from 'react'
 import SearchBox from '../components/SearchBox'
 import CardList from '../components/CardList'
 import ErrorBoundary from '../components/ErrorBoundary'
-export default class AppClass extends Component {
+import { connect } from 'react-redux'
+import {setSearchField} from '../actions'
+
+const mapStateToProps=state=>{
+    return {
+        // searchField: state.searchField
+        //from reducer
+        // searchField: state.searchData.searchField
+    }
+}
+
+const mapDispatchToProps=dispatch=>{
+return {    onSearchChange: (event)=> dispatch(setSearchField(event.target.value))
+}
+}
+
+class AppClass extends Component {
     constructor(){
         super() //calls constructor of component
         this.state={
@@ -38,3 +54,5 @@ fetch('https://jsonplaceholder.typicode.com/users')
     )
   }
 }
+
+export default connect(mapStateToProps, mapDispatchToProps)(AppClass)
