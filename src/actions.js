@@ -12,6 +12,7 @@ export const setSearchField = (text) =>{
     payload: text //common name used in redux //whatever user enters
 }}
 
+//higher level function
 export const requestData = () => dispatch => {
     dispatch({type: REQUEST_SEARCH_PENDING});
     fetch('https://jsonplaceholder.typicode.com/users')
