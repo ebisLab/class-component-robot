@@ -27,28 +27,18 @@ return {
 }
 
 class AppClass extends Component {
-    constructor(){
-        super() //calls constructor of component
-        this.state={
-            data: [], 
-            // searchfield:''
-        }
-    }
+//constructor is removed because there are no more states, they are passed as states
 
     componentDidMount(){
-        console.log(this.props)
-fetch('https://jsonplaceholder.typicode.com/users')
-.then(res=>res.json())
-.then(users=> this.setState({data:users}))
+        this.props.onRequestData()
     }
 
   render() {
-    const {data} = this.state
-    const {searchField, onSearchChange} = this.props
+    const {searchField, onSearchChange, data, isPending} = this.props
     const filteredValues = data.filter(item=>{
         return item.name.toLowerCase().includes(searchField.toLowerCase())
     })
-   return !data.length ? ( 'Loading ...'):
+   return isPending ? ( 'Loading ...'):
      (
       <div>
           <h1>With App class</h1>

@@ -13,6 +13,7 @@ export const setSearchField = (text) =>{
 }}
 
 //higher level function
+//with redux thunk, we can now listen to functions
 export const requestData = () => dispatch => {
     dispatch({type: REQUEST_SEARCH_PENDING});
     fetch('https://jsonplaceholder.typicode.com/users')
