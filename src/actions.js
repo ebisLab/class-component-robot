@@ -1,4 +1,9 @@
-import {CHANGE_SEARCH_FIELD} from './constants'
+import {
+CHANGE_SEARCH_FIELD,
+CHANGE_SEARCH_PENDING,
+CHANGE_SEARCH_SUCCESS,
+CHANGE_SEARCH_FAIL,
+} from './constants'
 
 export const setSearchField = (text) =>{
     // console.log('coming from action', text)
