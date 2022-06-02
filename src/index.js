@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import {Provider} from 'react-redux';
 import {combineReducers} from 'redux';
-import ThunkMiddleware from 'redux-thunk'//thunk/ middleware/ handle side effects -handles asynch functions
+//sees if any action is returning an function instead of an object
+import thunk from 'redux-thunk'//thunk/ middleware/ handle side effects -handles asynch functions
 import { configureStore } from "@reduxjs/toolkit";
 import { createLogger } from 'redux-logger'; //middleware
 import reportWebVitals from './reportWebVitals';
@@ -12,9 +13,12 @@ import { searchData, requestData } from './reducers';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const logger= createLogger()
+const rootReducer=combineReducers({searchData, requestData})
 const store = configureStore({
-  middleware: [ThunkMiddleware, logger], 
-  reducer: searchData}); //rootReducer -> many reducer so we combine them to be rootReducer
+  middleware: [thunk, logger], 
+  // reducer: searchData, //if we're targeting only 1 reducer
+  reducer: rootReducer //rootReducer -> many reducer so we combine them to be rootReducer
+});
 root.render(
   <React.StrictMode>
     <Provider store={store}>

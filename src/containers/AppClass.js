@@ -7,9 +7,9 @@ import {setSearchField} from '../actions'
 
 const mapStateToProps=state=>{
     return {
-        searchField: state.searchField
+        // searchField: state.searchField   //without combineReducer and only targeting searchData reducer
         //from reducer
-        // searchField: state.searchData.searchField
+        searchField: state.searchData.searchField
     }
 }
 
@@ -28,6 +28,7 @@ class AppClass extends Component {
     }
 
     componentDidMount(){
+        console.log(this.props)
 fetch('https://jsonplaceholder.typicode.com/users')
 .then(res=>res.json())
 .then(users=> this.setState({data:users}))
@@ -37,7 +38,8 @@ fetch('https://jsonplaceholder.typicode.com/users')
     const {data} = this.state
     const {searchField, onSearchChange} = this.props
     const filteredValues = data.filter(item=>{
-        return item.name.toLowerCase().includes(searchField.toLowerCase())
+        return item.name.toLowerCase()
+        // return item.name.toLowerCase().includes(searchField.toLowerCase())
     })
    return !data.length ? ( 'Loading ...'):
      (
