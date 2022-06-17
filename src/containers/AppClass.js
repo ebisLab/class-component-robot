@@ -4,6 +4,7 @@ import CardList from '../components/CardList'
 import ErrorBoundary from '../components/ErrorBoundary'
 import { connect } from 'react-redux'
 import {setSearchField, requestData} from '../actions'
+import Header from '../components/Header'
 // import { requestData } from '../reducers'
 
 const mapStateToProps=state=>{
@@ -41,6 +42,7 @@ class AppClass extends Component {
    return isPending ? ( 'Loading ...'):
      (
       <div>
+          <Header/>
           <h1>With App class</h1>
           <SearchBox onSearchChange={onSearchChange} />
           <ErrorBoundary>

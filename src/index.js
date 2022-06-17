@@ -15,7 +15,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 const logger= createLogger()
 const rootReducer=combineReducers({searchData, requestData})
 const store = configureStore({
-  middleware: [thunk, logger], 
+  middleware: [thunk], 
   // reducer: searchData, //if we're targeting only 1 reducer
   reducer: rootReducer //rootReducer -> many reducer so we combine them to be rootReducer
 });
