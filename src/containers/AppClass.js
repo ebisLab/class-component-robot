@@ -15,6 +15,8 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
+  console.log("requestdata", dispatch(requestData()));
+
   return {
     onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
     //requestdata action replaces componentdidmount request

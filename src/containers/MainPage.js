@@ -10,11 +10,19 @@ class MainPage extends Component {
     this.props.onRequestData();
   }
 
+  filteredValues = (data) => {
+    return data.filter((item) => {
+      return item.name
+        .toLowerCase()
+        .includes(this.props.searchField.toLowerCase());
+    });
+  };
+
   render() {
     const { searchField, onSearchChange, data, isPending } = this.props;
-    const filteredValues = data.filter((item) => {
-      return item.name.toLowerCase().includes(searchField.toLowerCase());
-    });
+    // const filteredValues = data.filter((item) => {
+    //   return item.name.toLowerCase().includes(searchField.toLowerCase());
+    // });
     return isPending ? (
       "Loading ..."
     ) : (
@@ -23,7 +31,7 @@ class MainPage extends Component {
         <h1>With App class</h1>
         <SearchBox onSearchChange={onSearchChange} />
         <ErrorBoundary>
-          <CardList data={filteredValues} />
+          <CardList data={this.filteredValues(data)} />
         </ErrorBoundary>
       </div>
     );
