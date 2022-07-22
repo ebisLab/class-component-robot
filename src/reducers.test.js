@@ -1,4 +1,3 @@
-import { type } from "@testing-library/user-event/dist/type";
 import {
   CHANGE_SEARCH_FIELD,
   REQUEST_SEARCH_PENDING,
